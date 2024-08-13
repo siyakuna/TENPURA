@@ -58,7 +58,12 @@ document.getElementById('width').addEventListener("input", function(evt){
 document.getElementById('pro').addEventListener("change", function(evt){
     if(document.getElementById('pro').checked)pro = siz.height/siz.width
 })
-
+document.getElementById("download").onclick = (event) => {
+    let link = document.createElement("a");
+    link.href = canvas.toDataURL("image/png");
+    link.download = "test.png";
+    link.click();
+}
 document.getElementById('title').addEventListener('input', function(evt){
   title = evt.target.value
 })
